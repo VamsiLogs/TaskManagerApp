@@ -1,8 +1,49 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TaskManager {
+
+
+    ArrayList<String> taskList = new ArrayList<>();
+
+    public void addTask(String taskName){
+
+
+        //Scanner scanner = new Scanner(System.in);
+        // Prompt the user to enter the task name
+        //System.out.println("Enter  your task title: ");
+
+        // Read the user input and store it in DB
+        //String taskName = scanner.nextLine();
+
+
+        //ArrayList<String> taskList = new ArrayList<>();
+        taskList.add(taskName);
+
+        //taskList.add("Status : Done , undone");
+        // Status of default task is into undone state (Status : Done , undone)
+
+        //System.out.print("Your Task added successfully!");
+        System.out.print("Your Task" + taskList + " added successfully!");
+
+        //scanner.nextLine();
+        //scanner.close();
+
+    }
+
+    // ***************************************************************************
+
+    public void viewTasks(){
+        System.out.println("Your Tasks are : ");
+        for(String task : taskList){
+            System.out.println(task);
+        }
+    }
+
+
+    // ***************************************************************************
     // Display menu options and handle user input
     public void displayMenu() {
         Scanner scanner = new Scanner(System.in);
@@ -18,8 +59,9 @@ public class TaskManager {
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
 
-            // Take input from the user
+
             try {
+                // Take input from the user
                 choice = Integer.parseInt(scanner.nextLine());
 
                 // Process the selected option
@@ -27,10 +69,13 @@ public class TaskManager {
                     case 1:
                         System.out.println("Option 1: Add Task selected.");
                         // Call method to add a task (you can implement this later)
+                        System.out.println("Enter  your task title: ");
+                        addTask(scanner.nextLine());
                         break;
                     case 2:
                         System.out.println("Option 2: View All Tasks selected.");
                         // Call method to view tasks
+                        viewTasks();
                         break;
                     case 3:
                         System.out.println("Option 3: Update Task Status selected.");

@@ -1,7 +1,7 @@
 package org.example;
 
 public class Main {
-    static void main() {
+    static void main(String[] args) {
         System.out.println("Welcome to the Task Manager!");
         System.out.println("----------------------------");
         // Create an instance of TaskManager
